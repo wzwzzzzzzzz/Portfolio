@@ -1,4 +1,4 @@
-﻿// Register ScrollTrigger Plugin for GSAP
+// Register ScrollTrigger Plugin for GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 // 1. Silk WebGL Shader Background Animation (1:1 from @react-bits/Silk-JS-CSS)
@@ -1234,43 +1234,27 @@ window.addEventListener('DOMContentLoaded', () => {
     let currentActiveIndex = 0;
     let currentBookPage = 1;
 
-    // Dynamic project galleries mapping for all 5 visual design folders in E:\AI\visual design
-    const shcUpperPages = [
-      'SHC-上册_画板 1.png',
-      ...Array.from({ length: 29 }, (_, i) => `SHC-上册-${String(i + 2).padStart(2, '0')}.png`),
-      'SHC-下册_画板 1.png',
-      ...Array.from({ length: 33 }, (_, i) => `SHC-下册-${String(i + 2).padStart(2, '0')}.png`)
-    ];
-
-    const smartLivingPages = [
-      'Smart Living_画板 1.png',
-      ...Array.from({ length: 27 }, (_, i) => `Smart Living-${String(i + 2).padStart(2, '0')}.png`)
-    ];
-
-    const smartCleaningPages = Array.from({ length: 34 }, (_, i) => `Smart Cleaning_页面_${String(i + 1).padStart(2, '0')}.png`);
-
-    const gitexPages = Array.from({ length: 8 }, (_, i) => `Gitex-${String(i + 1).padStart(2, '0')}.png`);
-
+    // Dynamic project galleries mapping for all 5 visual design folders in 05_categories/visual/detail
     const projectGalleries = {
       0: {
         folder: '05_categories/visual/detail/smart_entry',
-        pages: Array.from({ length: 54 }, (_, i) => `page_.png`)
+        pages: Array.from({ length: 54 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
       },
       1: {
         folder: '05_categories/visual/detail/smart_camera',
-        pages: Array.from({ length: 64 }, (_, i) => `page_.png`)
+        pages: Array.from({ length: 64 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
       },
       2: {
         folder: '05_categories/visual/detail/smart_living',
-        pages: Array.from({ length: 28 }, (_, i) => `page_.png`)
+        pages: Array.from({ length: 28 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
       },
       3: {
         folder: '05_categories/visual/detail/smart_cleaning',
-        pages: Array.from({ length: 34 }, (_, i) => `page_.png`)
+        pages: Array.from({ length: 34 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
       },
       4: {
         folder: '05_categories/visual/detail/gitex',
-        pages: Array.from({ length: 8 }, (_, i) => `page_.png`)
+        pages: Array.from({ length: 8 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
       }
     };
 
