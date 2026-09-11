@@ -1238,23 +1238,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const projectGalleries = {
       0: {
         folder: '05_categories/visual/detail/smart_entry',
-        pages: Array.from({ length: 54 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
+        pages: Array.from({ length: 54 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.webp`)
       },
       1: {
         folder: '05_categories/visual/detail/smart_camera',
-        pages: Array.from({ length: 64 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
+        pages: Array.from({ length: 64 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.webp`)
       },
       2: {
         folder: '05_categories/visual/detail/smart_living',
-        pages: Array.from({ length: 28 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
+        pages: Array.from({ length: 28 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.webp`)
       },
       3: {
         folder: '05_categories/visual/detail/smart_cleaning',
-        pages: Array.from({ length: 34 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
+        pages: Array.from({ length: 34 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.webp`)
       },
       4: {
         folder: '05_categories/visual/detail/gitex',
-        pages: Array.from({ length: 8 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.png`)
+        pages: Array.from({ length: 8 }, (_, i) => `page_${String(i + 1).padStart(2, '0')}.webp`)
       }
     };
 
