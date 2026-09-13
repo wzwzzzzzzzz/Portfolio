@@ -266,13 +266,17 @@ accordionTriggers.forEach(trigger => {
   });
 });
 
-// Auto-expand the first accordion item for visual cue
+// Auto-expand the first accordion item for visual cue and refresh ScrollTrigger on window load
 window.addEventListener('load', () => {
   const firstTrigger = document.querySelector('.accordion-trigger');
   if (firstTrigger) {
     setTimeout(() => {
       firstTrigger.click();
     }, 500);
+  }
+  // Recalculate all ScrollTrigger coordinates after all media/fonts are loaded
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
   }
 });
 
@@ -925,7 +929,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // --- 12. Ultra-Smooth GSAP ScrollTrigger Portfolio Stacking (EZVIZ -> Goldland) ---
   const initPortfolioCardStacking = () => {
-    if (window.innerWidth < 1024) return;
+    const portfolioCover = document.getElementById('portfolio');
+    if (portfolioCover) {
+      portfolioCover.style.zIndex = '5';
+    }
 
     const sections = [
       document.getElementById('portfolio-ezviz'),
@@ -938,28 +945,100 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (sections.length === 0) return;
 
-    sections.forEach((sec, idx) => {
-      // Set z-index stack order dynamically
-      sec.style.zIndex = (10 + idx).toString();
+    // Use gsap.matchMedia() for clean responsive lifecycle
+    const mm = gsap.matchMedia();
 
-      // Pin each section (except the 6th section which covers the 5th and finishes the stack)
-      if (idx < sections.length - 1) {
-        ScrollTrigger.create({
-          trigger: sec,
-          start: 'top top',
-          end: '+=100%',
-          pin: true,
-          pinSpacing: false, // Critical: Allows next section to slide up directly over the pinned section
-          scrub: true,
-          anticipatePin: 1
+    mm.add('(min-width: 1024px)', () => {
+      const lastSection = sections[sections.length - 1];
+
+      sections.forEach((sec, idx) => {
+        // Set z-index stack order dynamically
+        sec.style.zIndex = (10 + idx).toString();
+
+        // Pin each section until the last section reaches the top.
+        // This ensures pinned cards remain steadily in place underneath subsequent cards
+        // without premature unpinning, completely eliminating reverse-scroll flickering,
+        // layout jumps and white screen disappearances.
+        if (idx < sections.length - 1) {
+          ScrollTrigger.create({
+            trigger: sec,
+            start: 'top top',
+            endTrigger: lastSection,
+            end: 'top top',
+            pin: true,
+            pinSpacing: false, // Critical: Allows next section to slide up directly over the pinned section
+            scrub: true
+          });
+        }
+      });
+
+      return () => {
+        // Cleanup inline styles when switching back to mobile
+        sections.forEach((sec) => {
+          sec.style.zIndex = '';
         });
-      }
+      };
     });
 
     ScrollTrigger.refresh();
   };
 
   initPortfolioCardStacking();
+
+  // --- 12.5 Robust Anchor Smooth Scroll Handler ---
+  const initAnchorSmoothScroll = () => {
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+    internalLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const hash = link.getAttribute('href');
+        if (!hash) return;
+
+        if (hash === '#') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        const targetEl = document.querySelector(hash);
+        if (!targetEl) return;
+
+        e.preventDefault();
+
+        // Close mobile menu if open
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && !mobileMenu.classList.contains('pointer-events-none')) {
+          const menuToggle = document.getElementById('menu-toggle');
+          if (menuToggle) menuToggle.click();
+        }
+
+        // Calculate precise absolute target offset
+        const allTriggers = ScrollTrigger.getAll();
+        const trigger = allTriggers.find(t => t.trigger === targetEl);
+        let targetY = 0;
+
+        if (trigger && typeof trigger.start === 'number') {
+          targetY = trigger.start;
+        } else {
+          const rect = targetEl.getBoundingClientRect();
+          targetY = window.pageYOffset + rect.top;
+        }
+
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth'
+        });
+
+        // Ensure ScrollTrigger updates after scroll animation settles
+        setTimeout(() => {
+          ScrollTrigger.update();
+          ScrollTrigger.refresh();
+        }, 800);
+      });
+    });
+  };
+
+  initAnchorSmoothScroll();
 
   // --- 13. Category Showcase Interactive Tab System ---
   const initCategoryTabs = () => {
