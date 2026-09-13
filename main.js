@@ -1087,7 +1087,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function openSpatialModal(projectIndex) {
       if (!modal || !scrollContainer || !detailImg) return;
       const idx = Math.max(1, Math.min(TOTAL_PROJECTS, projectIndex));
-      detailImg.src = `05_categories/spatial/detail/detail_${String(idx).padStart(2, '0')}.png`;
+      detailImg.src = `05_categories/spatial/detail/detail_${String(idx).padStart(2, '0')}.jpg`;
       scrollContainer.scrollTop = 0;
       modal.style.display = 'block';
       requestAnimationFrame(() => {
@@ -1276,12 +1276,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const isWebDesignProject = (idx) => idx >= 5 && idx <= 10;
 
     const webDesignImages = {
-      5: '05_categories/visual/web/06_c6c.png',
-      6: '05_categories/visual/web/07_re7.png',
-      7: '05_categories/visual/web/08_ty1.png',
-      8: '05_categories/visual/web/09_y3000.png',
-      9: '05_categories/visual/web/10_akiitu.png',
-      10: '05_categories/visual/web/11_footwild.png'
+      5: '05_categories/visual/web/06_c6c.jpg',
+      6: '05_categories/visual/web/07_re7.jpg',
+      7: '05_categories/visual/web/08_ty1.jpg',
+      8: '05_categories/visual/web/09_y3000.jpg',
+      9: '05_categories/visual/web/10_akiitu.jpg',
+      10: '05_categories/visual/web/11_footwild.jpg'
     };
 
     function getMaxPages() {
@@ -1328,7 +1328,7 @@ window.addEventListener('DOMContentLoaded', () => {
           modalWebContainer.scrollTop = 0;
         }
         if (modalWebImg) {
-          const webImgSrc = webDesignImages[index] || '05_categories/visual/web/06_c6c.png';
+          const webImgSrc = webDesignImages[index] || '05_categories/visual/web/06_c6c.jpg';
           modalWebImg.setAttribute('src', encodeURI(webImgSrc));
         }
         if (modalScrollUpBtn) modalScrollUpBtn.style.display = 'block';
