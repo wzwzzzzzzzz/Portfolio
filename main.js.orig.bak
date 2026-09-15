@@ -1996,33 +1996,4 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   initVisualDesignInteractiveList();
-
-  // --- 17. Smart Viewport-Triggered Lazy Video Streaming ---
-  const lazyVideos = document.querySelectorAll('video.lazy-video');
-  if ('IntersectionObserver' in window && lazyVideos.length > 0) {
-    const videoObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          if (!video.src && video.dataset.src) {
-            video.src = video.dataset.src;
-            video.load();
-          }
-          video.play().catch(() => {});
-        } else {
-          if (video.src) {
-            video.pause();
-          }
-        }
-      });
-    }, { rootMargin: '200px 0px', threshold: 0.1 });
-
-    lazyVideos.forEach(v => videoObserver.observe(v));
-  } else {
-    // Graceful fallback
-    lazyVideos.forEach(v => {
-      if (v.dataset.src) v.src = v.dataset.src;
-    });
-  }
 });
-

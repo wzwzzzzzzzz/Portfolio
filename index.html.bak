@@ -5,19 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>吴曌 | Visual · AI · Spatial · Brand Designer Portfolio</title>
   <meta name="description" content="吴曌的个人设计作品集。致力于视觉设计、AI智能设计、品牌视觉设计与多媒体空间设计的无界融合。探索未来数字与实体的交互艺术。">
-  <!-- High-Priority Preload for First Screen Hero Image -->
-  <link rel="preload" as="image" href="01_hero/cover_title.png" fetchpriority="high">
-
-  <!-- Precompiled Static Tailwind CSS (Zero Runtime Overhead, Zero External CDN Latency) -->
-  <link rel="stylesheet" href="tailwind.min.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inclusive+Sans:ital,wght@0,300..400;1,300..400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Iconify / Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/css/icons.css">
+  <!-- Tailwind CSS v3 Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#050505',
+              card: '#0a0a0c',
+              cardInner: '#111115',
+              accent: '#00f0ff', // 极光冰蓝
+              accentDim: 'rgba(0, 240, 255, 0.12)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              textMuted: '#8f90a6',
+              textLight: '#f4f4f7',
+            }
+          },
+          fontFamily: {
+            sans: ['"Inclusive Sans"', '"Alibaba PuHuiTi"', '"AlibabaPuHuiTi"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            archivo: ['"Archivo Black"', 'sans-serif'],
+            inclusive: ['"Inclusive Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Fonts with font-display: swap (combined to prevent chained waterfall) -->
-  <link rel="preconnect" href="https://fonts.font.im">
-  <link rel="preconnect" href="https://fonts.gstatic.font.im" crossorigin>
-  <link href="https://fonts.font.im/css2?family=Archivo+Black&family=Inclusive+Sans:ital,wght@0,300..400;1,300..400&family=JetBrains+Mono:wght@300;400;500&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
-  
+  <!-- Three.js Library for WebGL Silk Shader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="bg-cyber-bg text-cyber-textLight font-sans overflow-x-hidden selection:bg-cyber-accent selection:text-black">
 
@@ -25,7 +51,7 @@
   <div id="silk-container" class="fixed inset-0 -z-10 w-full h-full overflow-hidden pointer-events-none bg-cyber-bg">
     <!-- WebGL Canvas will be inserted here dynamically -->
     <!-- Noise texture layer on top of Silk for grain effect (opacity=0.4, size=240px) -->
-    <div class="absolute inset-0 opacity-[0.4] pointer-events-none bg-repeat" style="background-image: url('ui/noise.png'); background-size: 240px;"></div>
+    <div class="absolute inset-0 opacity-[0.4] pointer-events-none bg-repeat" style="background-image: url('https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png'); background-size: 240px;"></div>
   </div>
 
   <!-- Custom Film Grain Overlay -->
@@ -102,7 +128,7 @@
 
     <!-- Hero Content (Centered Editorial Minimalist Image) -->
     <div class="relative flex justify-center items-center px-4 w-full min-w-0 select-none" style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 691px; min-width: 0; margin-left: auto; margin-right: auto; box-sizing: border-box;" aria-label="PORTFOLIO . 2026 WU ZHAO Industrial Design">
-      <img src="01_hero/cover_title.png" alt="PORTFOLIO 2026 WU ZHAO Industrial Design" fetchpriority="high" decoding="sync" class="w-full h-auto object-contain pointer-events-none drop-shadow-sm transition-transform duration-500 hover:scale-[1.01]" style="width: 100%; height: auto; max-width: 100%; object-fit: contain; pointer-events: none; user-select: none; display: block;" />
+      <img src="01_hero/cover_title.png" alt="PORTFOLIO 2026 WU ZHAO Industrial Design" class="w-full h-auto object-contain pointer-events-none drop-shadow-sm transition-transform duration-500 hover:scale-[1.01]" style="width: 100%; height: auto; max-width: 100%; object-fit: contain; pointer-events: none; user-select: none; display: block;" />
     </div>
   </section>
 
@@ -160,13 +186,13 @@
     <div class="lg:hidden w-full max-w-[640px] mx-auto py-8 flex justify-center items-center">
       <div id="profile-card-mobile" class="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 relative aspect-[1920/1080]">
         <!-- Static Base Plate (100% steady, never changes) -->
-        <img src="02_profile/profile_base_1080p.webp" alt="Personal Profile Base - 吴曌" class="w-full h-full object-contain select-none block"  loading="lazy" decoding="async" />
+        <img src="02_profile/profile_base_1080p.webp" alt="Personal Profile Base - 吴曌" class="w-full h-full object-contain select-none block" />
 
         <!-- Localized Right Text Overlay (Instant switch, no flicker, no fade transitions) -->
         <div id="profile-text-zone-mobile" class="absolute left-[71.354%] top-[17.130%] w-[21.354%] h-[54.167%] pointer-events-auto select-none">
-          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_1_1080p.webp" alt="Text Profile 1 - 萤石" style="display: block;"  loading="lazy" decoding="async" />
-          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_2_1080p.webp" alt="Text Profile 2 - PPD" style="display: none;"  loading="lazy" decoding="async" />
-          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_3_1080p.webp" alt="Text Profile 3 - 印文" style="display: none;"  loading="lazy" decoding="async" />
+          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_1_1080p.webp" alt="Text Profile 1 - 萤石" style="display: block;" />
+          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_2_1080p.webp" alt="Text Profile 2 - PPD" style="display: none;" />
+          <img class="profile-text-mobile absolute inset-0 w-full h-full object-contain block" src="02_profile/profile_text_3_1080p.webp" alt="Text Profile 3 - 印文" style="display: none;" />
         </div>
       </div>
     </div>
@@ -177,13 +203,13 @@
       <div id="desktop-scale-wrapper" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1920px] h-[1080px] origin-center bg-transparent overflow-hidden pointer-events-auto">
         <div id="profile-card-desktop" class="relative w-full h-full">
           <!-- Static Base Plate (Ticket background, photo, personal info - 100% steady, never changes) -->
-          <img src="02_profile/profile_base_web.webp" srcset="02_profile/profile_base_1080p.webp 1x, 02_profile/profile_base_web.webp 2x" alt="Personal Profile Base - 吴曌" class="w-full h-full object-cover select-none pointer-events-none block"  loading="lazy" decoding="async" />
+          <img src="02_profile/profile_base_web.webp" srcset="02_profile/profile_base_1080p.webp 1x, 02_profile/profile_base_web.webp 2x" alt="Personal Profile Base - 吴曌" class="w-full h-full object-cover select-none pointer-events-none block" />
 
           <!-- Localized Right Text Section Only (Strictly localized at X:1370px, Y:185px, W:410px, H:585px) -->
           <div id="profile-text-zone-desktop" class="absolute left-[1370px] top-[185px] w-[410px] h-[585px] pointer-events-auto select-none cursor-default">
-            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_1_web.webp" srcset="02_profile/profile_text_1_1080p.webp 1x, 02_profile/profile_text_1_web.webp 2x" alt="Text Profile 1 - 萤石" style="display: block;"  loading="lazy" decoding="async" />
-            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_2_web.webp" srcset="02_profile/profile_text_2_1080p.webp 1x, 02_profile/profile_text_2_web.webp 2x" alt="Text Profile 2 - PPD" style="display: none;"  loading="lazy" decoding="async" />
-            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_3_web.webp" srcset="02_profile/profile_text_3_1080p.webp 1x, 02_profile/profile_text_3_web.webp 2x" alt="Text Profile 3 - 印文" style="display: none;"  loading="lazy" decoding="async" />
+            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_1_web.webp" srcset="02_profile/profile_text_1_1080p.webp 1x, 02_profile/profile_text_1_web.webp 2x" alt="Text Profile 1 - 萤石" style="display: block;" />
+            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_2_web.webp" srcset="02_profile/profile_text_2_1080p.webp 1x, 02_profile/profile_text_2_web.webp 2x" alt="Text Profile 2 - PPD" style="display: none;" />
+            <img class="profile-text-desktop absolute inset-0 w-full h-full object-contain pointer-events-none block" src="02_profile/profile_text_3_web.webp" srcset="02_profile/profile_text_3_1080p.webp 1x, 02_profile/profile_text_3_web.webp 2x" alt="Text Profile 3 - 印文" style="display: none;" />
           </div>
         </div>
       </div>
@@ -201,7 +227,7 @@
           
           <!-- Fullscreen Background GIF (1920x1080, no borders, positioned strictly below text, top: 280px) -->
           <div class="absolute w-[1920px] h-[1080px] left-0 top-[280px] overflow-hidden">
-            <video data-src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
+            <video src="03_work/work_marquee_bg.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
           </div>
 
           <!-- Row 1: WORK. (Initial position top: 13px) -->
@@ -236,7 +262,7 @@
       </div>
       <!-- Mobile GIF Showcase -->
       <div class="w-full mt-10 rounded-2xl overflow-hidden border border-white/10 bg-black/40 aspect-video">
-        <video data-src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
+        <video src="03_work/work_marquee_bg.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
       </div>
     </div>
     
@@ -251,9 +277,9 @@
       <div id="ezviz-scale-wrapper" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1920px] h-[1080px] origin-center bg-white overflow-hidden pointer-events-auto">
         <div style="width: 1920px; height: 1080px; position: relative; background: white; overflow: hidden">
           <div style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: white"></div>
-          <img style="width: 502px; height: 493px; left: 1378px; top: 500px; position: absolute" src="04_cases/01_ezviz_camera_guide.png" alt="EZVIZ Camera Guide"  loading="lazy" decoding="async" />
-          <img style="width: 639.35px; height: 904px; left: 40px; top: 88px; position: absolute" src="04_cases/01_ezviz_tech_cover.webp" alt="EZVIZ Technology Cover"  loading="lazy" decoding="async" />
-          <img style="width: 349px; height: 494px; left: 1012px; top: 499px; position: absolute" src="04_cases/01_ezviz_outdoor_camera.webp" alt="EZVIZ Outdoor Camera"  loading="lazy" decoding="async" />
+          <img style="width: 502px; height: 493px; left: 1378px; top: 500px; position: absolute" src="04_cases/01_ezviz_camera_guide.png" alt="EZVIZ Camera Guide" />
+          <img style="width: 639.35px; height: 904px; left: 40px; top: 88px; position: absolute" src="04_cases/01_ezviz_tech_cover.webp" alt="EZVIZ Technology Cover" />
+          <img style="width: 349px; height: 494px; left: 1012px; top: 499px; position: absolute" src="04_cases/01_ezviz_outdoor_camera.webp" alt="EZVIZ Outdoor Camera" />
           <div style="width: 502px; height: 411px; left: 1378px; top: 88px; position: absolute; text-align: justify; color: black; font-size: 17px; font-family: Inter; font-weight: 300; word-wrap: break-word">About EZVIZ
           <br/>EZVIZ is a global leader in intelligent visual and AloT technology. Since2013, EZVIZ has been dedicated to providing "easy vision" and protection inevery home with its renowned smart home cameras, and is continuouslycreating new generations of connected products and services to empower the future of smart living.
           <br/>Founded by a team of ambitious engineers, EZVIZ is an innovation-drivencompany with a mission to co-create a better everyday life with safe, smarttechnology. Trusted by millions of users in more than 130 countries andregions, EZVIZ has expanded from home security solutions to smart entryproducts, smart cleaning robots, smart control products, and more, receivingwide recognition for its product innovation, user-centric design, fast-evolvingecosystem, and reliable open cloud capabilities.</div>
@@ -273,14 +299,14 @@
       <!-- Grid of Images -->
       <div class="w-full flex flex-col space-y-6">
         <div class="w-full rounded-xl overflow-hidden shadow-sm">
-          <img src="04_cases/01_ezviz_tech_cover.webp" alt="EZVIZ Technology Cover" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/01_ezviz_tech_cover.webp" alt="EZVIZ Technology Cover" class="w-full h-auto">
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div class="rounded-xl overflow-hidden shadow-md aspect-square">
-            <img src="04_cases/01_ezviz_camera_guide.png" alt="EZVIZ Camera Guide" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="04_cases/01_ezviz_camera_guide.png" alt="EZVIZ Camera Guide" class="w-full h-full object-cover">
           </div>
           <div class="rounded-xl overflow-hidden shadow-md aspect-[349/494]">
-            <img src="04_cases/01_ezviz_outdoor_camera.webp" alt="EZVIZ Outdoor Camera" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <img src="04_cases/01_ezviz_outdoor_camera.webp" alt="EZVIZ Outdoor Camera" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -303,7 +329,7 @@
             <div style="width: 484px; height: 147px; left: 1293px; top: 610px; position: absolute; text-align: justify; color: black; font-size: 17px; font-family: Inter; font-weight: 300; word-wrap: break-word">Smart Sensor&amp; Alarm
             <br/>Building a smart home starts with EZVIZ smart home sensors. The EZVIZ sensor systemprovides a one-stop solution so you can stop worrying about everything from break-ins tofamily emergencies. They are the eyes and ears of your home, notifying you and other smart
             devices of status changes around the clock.</div>
-            <img style="width: 1246px; height: 791px; left: 0px; top: 0px; position: absolute" src="04_cases/02_smart_sensor.png" alt="Smart Sensor and Alarm"  loading="lazy" decoding="async" />
+            <img style="width: 1246px; height: 791px; left: 0px; top: 0px; position: absolute" src="04_cases/02_smart_sensor.png" alt="Smart Sensor and Alarm" />
           </div>
         </div>
       </div>
@@ -319,7 +345,7 @@
       
       <!-- Image -->
       <div class="w-full rounded-xl overflow-hidden shadow-md">
-        <img src="04_cases/02_smart_sensor.png" alt="Smart Sensor and Alarm" class="w-full h-auto" loading="lazy" decoding="async">
+        <img src="04_cases/02_smart_sensor.png" alt="Smart Sensor and Alarm" class="w-full h-auto">
       </div>
     </div>
 
@@ -336,9 +362,9 @@
           <div style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: white"></div>
           <div style="width: 1597px; height: 212px; left: 161px; top: 140px; position: absolute; text-align: justify; color: black; font-size: 14px; font-family: Inter; font-weight: 200; word-wrap: break-word; line-height: 1.7;">本系列包装适配小羊森林保和膏、乌梅三豆膏两款药食同源膏方，专为母婴儿童调理食疗场景打造，秉持“天然安心”的核心设计理念，贴合家长对儿童食疗产品安全、温和的选购需求。包装整体摒弃传统中药包装厚重沉闷的视觉弊端，采用温润柔和的米白底色，搭配低饱和度自然色系，色调干净素雅、温润舒适。同时融入简约精致的手绘树木、原生草本插画，还原食材自然本态，有效弱化浓重药感，整体打造出清新舒缓、温和治愈的视觉氛围，贴合儿童产品的温柔调性。<br/><br/>在版式设计上，作品融合现代简约排版方式与雅致中式字体，兼顾国风底蕴与现代审美。品名搭配清晰拼音标注，提升阅读实用性，搭配“天然的・更安心”专属品牌标语，直观传递产品少添加、纯食材、古法慢熬的工艺优势，有效消除家长顾虑、筑牢品牌信任。两款产品实现系列视觉风格统一，保障品牌辨识度，同时通过专属色调、差异化食材插画区分品类属性，清晰区分两款产品功效特色。整体设计平衡信息可读性、品牌辨识度与现代美学，彻底打破传统食疗膏方的刻板印象，重塑儿童中式食疗产品天然温和、安全健康的全新质感。</div>
           <div style="width: 140px; height: 16px; left: 161px; top: 110px; position: absolute; background: #7A466A"></div>
-          <img style="width: 517px; height: 600px; left: 161px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_1.png" alt="Sheep Forest Package 1"  loading="lazy" decoding="async" />
-          <img style="width: 517px; height: 600px; left: 701px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_2.png" alt="Sheep Forest Package 2"  loading="lazy" decoding="async" />
-          <img style="width: 517px; height: 600px; left: 1241px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_3.png" alt="Sheep Forest Package 3"  loading="lazy" decoding="async" />
+          <img style="width: 517px; height: 600px; left: 161px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_1.png" alt="Sheep Forest Package 1" />
+          <img style="width: 517px; height: 600px; left: 701px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_2.png" alt="Sheep Forest Package 2" />
+          <img style="width: 517px; height: 600px; left: 1241px; top: 342px; position: absolute" src="04_cases/03_sheep_forest_pkg_3.png" alt="Sheep Forest Package 3" />
         </div>
       </div>
     </div>
@@ -355,13 +381,13 @@
       <!-- Images List -->
       <div class="w-full flex flex-col space-y-6">
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img src="04_cases/03_sheep_forest_pkg_1.png" alt="Sheep Forest Package 1" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/03_sheep_forest_pkg_1.png" alt="Sheep Forest Package 1" class="w-full h-auto">
         </div>
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img src="04_cases/03_sheep_forest_pkg_2.png" alt="Sheep Forest Package 2" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/03_sheep_forest_pkg_2.png" alt="Sheep Forest Package 2" class="w-full h-auto">
         </div>
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img src="04_cases/03_sheep_forest_pkg_3.png" alt="Sheep Forest Package 3" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/03_sheep_forest_pkg_3.png" alt="Sheep Forest Package 3" class="w-full h-auto">
         </div>
       </div>
     </div>
@@ -377,11 +403,11 @@
       <div id="art-of-steam-scale-wrapper" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1920px] h-[1080px] origin-center bg-white overflow-hidden pointer-events-auto">
         <div style="width: 1920px; height: 1080px; position: relative; background: white; overflow: hidden">
           <div style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: white"></div>
-          <img style="width: 339px; height: 451px; left: 1270px; top: 315px; position: absolute" src="04_cases/04_art_of_steam_detail.webp" alt="Art of Steam Display Detail"  loading="lazy" decoding="async" />
+          <img style="width: 339px; height: 451px; left: 1270px; top: 315px; position: absolute" src="04_cases/04_art_of_steam_detail.webp" alt="Art of Steam Display Detail" />
           <div style="left: 1263px; top: 111px; position: absolute; font-size: 60px; font-family: Inter; font-weight: 700; line-height: 60px; word-wrap: break-word; background: linear-gradient(to right, #FF0000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ART<br/>   OF STEAM</div>
           <div style="left: 1270px; top: 245px; position: absolute; font-size: 55px; font-family: Inter; font-weight: 700; line-height: 60px; word-wrap: break-word; background: linear-gradient(to right, #FF0000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">&lt;蒸汽的艺术</div>
           <div style="width: 338px; height: 178px; left: 1271px; top: 780px; position: absolute; text-align: justify; color: black; font-size: 14px; font-family: Inter; font-weight: 200; word-wrap: break-word; line-height: 1.6;">展厅产品体验区依托生活化实际应用场景打造，是产品展示区的延伸板块，主打沉浸式互动体验。区域以真实生活场景为核心，打破静态展示局限，让参观者亲身实操、直观感受蒸汽小家电的实际使用效果。通过场景化沉浸式体验，帮助访客深度理解产品核心性能与实用价值，真切感知产品为日常家居生活带来的便捷体验与创新升级。</div>
-          <img style="width: 960px; height: 1080px; left: 0px; top: 0px; position: absolute" src="04_cases/04_art_of_steam_large.webp" alt="Art of Steam Large Exhibit"  loading="lazy" decoding="async" />
+          <img style="width: 960px; height: 1080px; left: 0px; top: 0px; position: absolute" src="04_cases/04_art_of_steam_large.webp" alt="Art of Steam Large Exhibit" />
         </div>
       </div>
     </div>
@@ -398,10 +424,10 @@
       <!-- Images -->
       <div class="w-full flex flex-col space-y-6">
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img src="04_cases/04_art_of_steam_large.webp" alt="Art of Steam Large Exhibit" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/04_art_of_steam_large.webp" alt="Art of Steam Large Exhibit" class="w-full h-auto">
         </div>
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img src="04_cases/04_art_of_steam_detail.webp" alt="Art of Steam Display Detail" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="04_cases/04_art_of_steam_detail.webp" alt="Art of Steam Display Detail" class="w-full h-auto">
         </div>
       </div>
     </div>
@@ -418,8 +444,8 @@
         <div style="width: 1920px; height: 1080px; position: relative; background: white; overflow: hidden">
           <div style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: white"></div>
           <div style="width: 421px; height: 882px; left: 950px; top: 99px; position: absolute; text-align: justify; color: black; font-size: 14px; font-family: Inter; font-weight: 200; word-wrap: break-word;">我们为永久磁业公司精心策划并实施了一项全方位的品牌文化科技展示空间，旨在通过创新的设计理念与新技术展示手段，全面展现公司深厚的文化底蕴与卓越的科技实力。整个项目以现代、科技、开放为设计理念，将永久磁业的企业文化、科技实力与未来愿景巧妙融合。<br/><br/>展厅围绕不同的信息进行布局，这些空间不仅展示了永久磁业最新的科研成果、高端生产设备以及环保节能技术，让参观者身临其境地体验磁科技的无限可能，感受公司在科技创新方面的强劲动力与前瞻视野。U型交互展区利用现代美学与整个数字展厅之间建立了一种动态的连接。利用全息、多媒体等科技展示手段，让参观者亲身体验磁性材料的神奇魅力，感受未来科技的无限可能。<br/><br/>We have carefully planned and constructed a comprehensive brand, culture and technology exhibition space for Yongjiu Magnetics. Adopting innovative design concepts and advanced display technologies, the space fully showcases the company’s profound cultural heritage and outstanding technological strength.    Guided by a design philosophy of modernity, technology and openness, the entire project seamlessly integrates Yongjiu Magnetics’ corporate culture, technological prowess and future vision.    The exhibition hall is laid out according to different thematic narratives. It displays the company’s latest scientific research achievements, high-end production equipment and eco-friendly energy-saving technologies, allowing visitors to immerse themselves in the boundless potential of magnetic technology, and experience the company’s robust momentum and forward-looking vision in technological innovation. The U-shaped interactive zone creates a dynamic spatial connection through contemporary aesthetics and the overall digital exhibition space. Holographic displays, multimedia installations and other immersive technologies enable visitors to directly experience the wonders of magnetic materials and glimpse the endless possibilities of future technology.</div>
-          <img style="width: 795px; height: 882px; left: 80px; top: 99px; position: absolute; object-fit: cover;" src="04_cases/05_yongjiu_exhibit_large.webp" alt="Yongjiu Magnetics Large Exhibit"  loading="lazy" decoding="async" />
-          <img style="width: 396px; height: 882px; left: 1446px; top: 97px; position: absolute; object-fit: cover;" src="04_cases/05_yongjiu_exhibit_detail.png" alt="Yongjiu Magnetics Display Detail"  loading="lazy" decoding="async" />
+          <img style="width: 795px; height: 882px; left: 80px; top: 99px; position: absolute; object-fit: cover;" src="04_cases/05_yongjiu_exhibit_large.webp" alt="Yongjiu Magnetics Large Exhibit" />
+          <img style="width: 396px; height: 882px; left: 1446px; top: 97px; position: absolute; object-fit: cover;" src="04_cases/05_yongjiu_exhibit_detail.png" alt="Yongjiu Magnetics Display Detail" />
         </div>
       </div>
     </div>
@@ -437,10 +463,10 @@
       <!-- Images -->
       <div class="w-full flex flex-col space-y-6">
         <div class="rounded-xl overflow-hidden shadow-md aspect-[795/882]">
-          <img src="04_cases/05_yongjiu_exhibit_large.webp" alt="Yongjiu Magnetics Large Exhibit" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <img src="04_cases/05_yongjiu_exhibit_large.webp" alt="Yongjiu Magnetics Large Exhibit" class="w-full h-full object-cover">
         </div>
         <div class="rounded-xl overflow-hidden shadow-md aspect-[396/882]">
-          <img src="04_cases/05_yongjiu_exhibit_detail.png" alt="Yongjiu Magnetics Display Detail" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <img src="04_cases/05_yongjiu_exhibit_detail.png" alt="Yongjiu Magnetics Display Detail" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -456,7 +482,7 @@
       <div id="goldland-scale-wrapper" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1920px] h-[1080px] origin-center bg-white overflow-hidden pointer-events-auto">
         <div style="width: 1920px; height: 1080px; position: relative; background: white; overflow: hidden">
           <div style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: white"></div>
-          <img style="width: 1920px; height: 531px; left: 0px; top: 549px; position: absolute; object-fit: cover;" src="04_cases/06_goldland_recycle.webp" alt="Goldland Recycle Exhibit"  loading="lazy" decoding="async" />
+          <img style="width: 1920px; height: 531px; left: 0px; top: 549px; position: absolute; object-fit: cover;" src="04_cases/06_goldland_recycle.webp" alt="Goldland Recycle Exhibit" />
           <div style="width: 644px; height: 160px; left: 638px; top: 260px; position: absolute; text-align: justify; color: black; font-size: 14px; font-family: Inter; font-weight: 200; word-wrap: break-word; line-height: 1.8;">宁波金土地再生资源有限公司，成立于2013年，是目前宁波市唯一拥有废电池和废矿物油收集经营许可证的“双证许可”企业，深耕宁波危废回收处置利用行业。不断探索“三端一数”模式，实现了数字化管理，打造智慧环保平台达到品牌升级。<br/>以简洁而干练定位的设计语言，营造了一个严谨而又科学的展厅空间。呼应“三端一数”模式，体现数字化展厅，打造智慧环保的展示平台，展现对未来城市环境的一个期许和探索。整个展厅表达了对这个社会深切的关注，又表达了积极向上的情绪。展示空间服从于叙事，而叙事服从于内容，高超的空间装饰技巧并不是展厅本身的意义，真正的意义在于如何把内容更好的传达，把故事更好的讲述。</div>
           <div style="width: 400px; height: 30px; left: 760px; top: 160px; position: absolute; text-align: center;"><span style="color: black; font-size: 20px; font-family: Inter; font-weight: 300; word-wrap: break-word">生态丹心</span><span style="color: black; font-size: 20px; font-family: Inter; font-weight: 300; letter-spacing: 12px; word-wrap: break-word"> ·</span><span style="color: black; font-size: 20px; font-family: Inter; font-weight: 300; word-wrap: break-word">源动未来</span></div>
         </div>
@@ -480,7 +506,7 @@
       <!-- Images -->
       <div class="w-full">
         <div class="rounded-xl overflow-hidden shadow-md aspect-[1920/531]">
-          <img src="04_cases/06_goldland_recycle.webp" alt="Goldland Recycle Exhibit" class="w-full h-full object-cover" loading="lazy" decoding="async">
+          <img src="04_cases/06_goldland_recycle.webp" alt="Goldland Recycle Exhibit" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -496,12 +522,12 @@
       <div id="categories-scale-wrapper" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1920px] h-[1080px] origin-center bg-white overflow-hidden pointer-events-auto">
         <div style="width: 1920px; height: 1080px; position: relative; background: white; overflow: hidden">
           <!-- Background Frame -->
-          <img style="width: 1920px; height: 1080px; left: -1px; top: 0px; position: absolute; z-index: 1;" src="05_categories/category_frame_bg.png" alt="Category Frame Background"  loading="lazy" decoding="async" />
+          <img style="width: 1920px; height: 1080px; left: -1px; top: 0px; position: absolute; z-index: 1;" src="05_categories/category_frame_bg.png" alt="Category Frame Background" />
           
           <!-- Category 1: 视觉设计图层 (Green Layer 11.png - Default Top Layer z-index: 30) -->
           <div id="tab-layer-visual" class="tab-card-layer" style="position: absolute; inset: 0; z-index: 30; filter: drop-shadow(0px 10px 28px rgba(0, 0, 0, 0.25)); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.3s ease;">
             <!-- Green Card Cutout Image -->
-            <img style="width: 1920px; height: 977px; left: 0px; top: 103px; position: absolute; pointer-events: none;" src="05_categories/tab_visual_bg.png" alt="Visual Design Showcase"  loading="lazy" decoding="async" />
+            <img style="width: 1920px; height: 977px; left: 0px; top: 103px; position: absolute; pointer-events: none;" src="05_categories/tab_visual_bg.png" alt="Visual Design Showcase" />
             
             <!-- Featured Projects Title -->
             <div style="width: 475px; height: 33px; left: 30px; top: 262px; position: absolute; color: black; font-size: 15px; font-family: Alan Sans, sans-serif; font-weight: 600; text-transform: uppercase; line-height: 35px; word-wrap: break-word; pointer-events: none;">Featured Projects</div>
@@ -614,13 +640,13 @@
 
             <!-- Right Preview Container (#313131) & Dynamic Front Cover Image -->
             <div style="width: 530px; height: 749px; left: 980px; top: 313px; position: absolute; background: #313131; z-index: 6;"></div>
-            <img id="visual-preview-img" style="width: 500px; height: 707px; left: 995px; top: 334px; position: absolute; object-fit: cover; z-index: 7; transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer;" src="05_categories/visual/cover_01_smart_entry.png" alt="Visual Project Preview"  loading="lazy" decoding="async" />
+            <img id="visual-preview-img" style="width: 500px; height: 707px; left: 995px; top: 334px; position: absolute; object-fit: cover; z-index: 7; transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer;" src="05_categories/visual/cover_01_smart_entry.png" alt="Visual Project Preview" />
           </div>
           
           <!-- Category 2: 空间设计图层 (Yellow Layer - 1:1 Restored from Space Design Cover 1.png) -->
           <div id="tab-layer-spatial" class="tab-card-layer" style="position: absolute; inset: 0; z-index: 20; filter: drop-shadow(0px 6px 18px rgba(0, 0, 0, 0.16)); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.3s ease;">
             <!-- 1:1 Pixel-Perfect Layout Restored from Space Design Cover 1.png -->
-            <img id="spatial-cover-img" style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; pointer-events: none; user-select: none;" src="05_categories/spatial/cover/cover_01.png" alt="Spatial Design Showcase"  loading="lazy" decoding="async" />
+            <img id="spatial-cover-img" style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; pointer-events: none; user-select: none;" src="05_categories/spatial/cover/cover_01.png" alt="Spatial Design Showcase" />
 
             <!-- Interactive Hotspot Container for 12 Spatial Projects (Top: 275px, Left: 95px, Width: 1728px, Height: 768px) -->
             <div id="spatial-accordion-interactive" style="width: 1728px; height: 768px; left: 95px; top: 275px; position: absolute; z-index: 5; pointer-events: none; cursor: pointer;"></div>
@@ -629,59 +655,59 @@
           <!-- Category 3: 动态视频图层 (Grey Layer 13.png - Default Bottom Layer z-index: 10) -->
           <div id="tab-layer-video" class="tab-card-layer" style="position: absolute; inset: 0; z-index: 10; filter: drop-shadow(0px 6px 18px rgba(0, 0, 0, 0.16)); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease, opacity 0.3s ease;">
             <!-- Grey Card Cutout Image -->
-            <img style="width: 1920px; height: 977px; left: 0px; top: 103px; position: absolute; pointer-events: none;" src="05_categories/tab_video_bg.png" alt="Dynamic Video Showcase"  loading="lazy" decoding="async" />
+            <img style="width: 1920px; height: 977px; left: 0px; top: 103px; position: absolute; pointer-events: none;" src="05_categories/tab_video_bg.png" alt="Dynamic Video Showcase" />
 
             <!-- Dynamic Video Interactive 3D Curved Stage Carousel -->
             <div id="video-showcase-container" style="position: absolute; inset: 0; pointer-events: auto;">
 
               <!-- 18 Curved 3D Video Cards -->
-              <img class="curved-video-card" data-index="0" data-name="EZVIZ Dynamic Video 01" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_01.png" alt="Video Cover 1"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="1" data-name="EZVIZ Dynamic Video 02" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_02.png" alt="Video Cover 2"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="2" data-name="EZVIZ Dynamic Video 03" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_03.png" alt="Video Cover 3"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="3" data-name="EZVIZ Dynamic Video 04" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_04.png" alt="Video Cover 4"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="4" data-name="EZVIZ Dynamic Video 05" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_05.png" alt="Video Cover 5"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="5" data-name="EZVIZ Dynamic Video 06" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_06.png" alt="Video Cover 6"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="6" data-name="EZVIZ Dynamic Video 07" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_07.png" alt="Video Cover 7"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="7" data-name="EZVIZ Dynamic Video 08" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_08.png" alt="Video Cover 8"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="8" data-name="EZVIZ Dynamic Video 09" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_09.png" alt="Video Cover 9"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="9" data-name="EZVIZ Dynamic Video 10" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_10.png" alt="Video Cover 10"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="10" data-name="EZVIZ Dynamic Video 11" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_11.png" alt="Video Cover 11"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="11" data-name="EZVIZ Dynamic Video 12" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_12.png" alt="Video Cover 12"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="12" data-name="EZVIZ Dynamic Video 13" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_13.png" alt="Video Cover 13"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="13" data-name="EZVIZ Dynamic Video 14" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_14.png" alt="Video Cover 14"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="14" data-name="EZVIZ Dynamic Video 15" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_15.png" alt="Video Cover 15"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="15" data-name="EZVIZ Dynamic Video 16" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_16.png" alt="Video Cover 16"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="16" data-name="EZVIZ Dynamic Video 17" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_17.png" alt="Video Cover 17"  loading="lazy" decoding="async" />
-              <img class="curved-video-card" data-index="17" data-name="EZVIZ Dynamic Video 18" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_18.png" alt="Video Cover 18"  loading="lazy" decoding="async" />
+              <img class="curved-video-card" data-index="0" data-name="EZVIZ Dynamic Video 01" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_01.png" alt="Video Cover 1" />
+              <img class="curved-video-card" data-index="1" data-name="EZVIZ Dynamic Video 02" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_02.png" alt="Video Cover 2" />
+              <img class="curved-video-card" data-index="2" data-name="EZVIZ Dynamic Video 03" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_03.png" alt="Video Cover 3" />
+              <img class="curved-video-card" data-index="3" data-name="EZVIZ Dynamic Video 04" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_04.png" alt="Video Cover 4" />
+              <img class="curved-video-card" data-index="4" data-name="EZVIZ Dynamic Video 05" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_05.png" alt="Video Cover 5" />
+              <img class="curved-video-card" data-index="5" data-name="EZVIZ Dynamic Video 06" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_06.png" alt="Video Cover 6" />
+              <img class="curved-video-card" data-index="6" data-name="EZVIZ Dynamic Video 07" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_07.png" alt="Video Cover 7" />
+              <img class="curved-video-card" data-index="7" data-name="EZVIZ Dynamic Video 08" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_08.png" alt="Video Cover 8" />
+              <img class="curved-video-card" data-index="8" data-name="EZVIZ Dynamic Video 09" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_09.png" alt="Video Cover 9" />
+              <img class="curved-video-card" data-index="9" data-name="EZVIZ Dynamic Video 10" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_10.png" alt="Video Cover 10" />
+              <img class="curved-video-card" data-index="10" data-name="EZVIZ Dynamic Video 11" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_11.png" alt="Video Cover 11" />
+              <img class="curved-video-card" data-index="11" data-name="EZVIZ Dynamic Video 12" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_12.png" alt="Video Cover 12" />
+              <img class="curved-video-card" data-index="12" data-name="EZVIZ Dynamic Video 13" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_13.png" alt="Video Cover 13" />
+              <img class="curved-video-card" data-index="13" data-name="EZVIZ Dynamic Video 14" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_14.png" alt="Video Cover 14" />
+              <img class="curved-video-card" data-index="14" data-name="EZVIZ Dynamic Video 15" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_15.png" alt="Video Cover 15" />
+              <img class="curved-video-card" data-index="15" data-name="EZVIZ Dynamic Video 16" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_16.png" alt="Video Cover 16" />
+              <img class="curved-video-card" data-index="16" data-name="EZVIZ Dynamic Video 17" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_17.png" alt="Video Cover 17" />
+              <img class="curved-video-card" data-index="17" data-name="EZVIZ Dynamic Video 18" data-meta="Product Showcase • Full Cover" src="05_categories/video/cover/cover_full_18.png" alt="Video Cover 18" />
 
               <!-- 12-Card Grid Layout Overview Mode B (Toggled via 田字格图标 - Pure Posters without White Border) -->
               <div id="video-grid-container" style="position: absolute; inset: 0; display: none; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; z-index: 25;">
                 <!-- Row 1 (top: 290px) -->
-                <img class="grid-video-card" data-index="0" style="width: 300px; height: 300px; left: 30px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_01.png" alt="Video 1"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="1" style="width: 300px; height: 300px; left: 342px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_02.png" alt="Video 2"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="2" style="width: 300px; height: 300px; left: 654px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_03.png" alt="Video 3"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="3" style="width: 300px; height: 300px; left: 966px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_04.png" alt="Video 4"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="4" style="width: 300px; height: 300px; left: 1278px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_05.png" alt="Video 5"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="5" style="width: 300px; height: 300px; left: 1590px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_06.png" alt="Video 6"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="0" style="width: 300px; height: 300px; left: 30px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_01.png" alt="Video 1" />
+                <img class="grid-video-card" data-index="1" style="width: 300px; height: 300px; left: 342px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_02.png" alt="Video 2" />
+                <img class="grid-video-card" data-index="2" style="width: 300px; height: 300px; left: 654px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_03.png" alt="Video 3" />
+                <img class="grid-video-card" data-index="3" style="width: 300px; height: 300px; left: 966px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_04.png" alt="Video 4" />
+                <img class="grid-video-card" data-index="4" style="width: 300px; height: 300px; left: 1278px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_05.png" alt="Video 5" />
+                <img class="grid-video-card" data-index="5" style="width: 300px; height: 300px; left: 1590px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_06.png" alt="Video 6" />
 
                 <!-- Row 2 (top: 606px) -->
-                <img class="grid-video-card" data-index="6" style="width: 300px; height: 300px; left: 31px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_07.png" alt="Video 7"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="7" style="width: 300px; height: 300px; left: 343px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_08.png" alt="Video 8"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="8" style="width: 300px; height: 300px; left: 655px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_09.png" alt="Video 9"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="9" style="width: 300px; height: 300px; left: 967px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_10.png" alt="Video 10"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="10" style="width: 300px; height: 300px; left: 1279px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_11.png" alt="Video 11"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="11" style="width: 300px; height: 300px; left: 1591px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_12.png" alt="Video 12"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="6" style="width: 300px; height: 300px; left: 31px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_07.png" alt="Video 7" />
+                <img class="grid-video-card" data-index="7" style="width: 300px; height: 300px; left: 343px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_08.png" alt="Video 8" />
+                <img class="grid-video-card" data-index="8" style="width: 300px; height: 300px; left: 655px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_09.png" alt="Video 9" />
+                <img class="grid-video-card" data-index="9" style="width: 300px; height: 300px; left: 967px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_10.png" alt="Video 10" />
+                <img class="grid-video-card" data-index="10" style="width: 300px; height: 300px; left: 1279px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_11.png" alt="Video 11" />
+                <img class="grid-video-card" data-index="11" style="width: 300px; height: 300px; left: 1591px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_12.png" alt="Video 12" />
               </div>
 
               <!-- Controls (3 Round Buttons strictly using Button folder PNG assets and exact coordinates) -->
               <!-- Prev Button (left: 881px, top: 991px) -> ui/btn_left.png -->
-              <img id="video-prev-btn" style="width: 35px; height: 35px; left: 881px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_left.png" alt="上一个视频" title="上一个视频"  loading="lazy" decoding="async" />
+              <img id="video-prev-btn" style="width: 35px; height: 35px; left: 881px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_left.png" alt="上一个视频" title="上一个视频" />
 
               <!-- Next Button (left: 946px, top: 991px) -> ui/btn_right.png -->
-              <img id="video-next-btn" style="width: 35px; height: 35px; left: 946px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_right.png" alt="下一个视频" title="下一个视频"  loading="lazy" decoding="async" />
+              <img id="video-next-btn" style="width: 35px; height: 35px; left: 946px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_right.png" alt="下一个视频" title="下一个视频" />
 
               <!-- Grid Overview Button (left: 1005px, top: 991px) -> ui/btn_toggle_layout.png -->
-              <img id="video-grid-btn" style="width: 35px; height: 35px; left: 1005px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_toggle_layout.png" alt="所有视频概览" title="所有视频概览"  loading="lazy" decoding="async" />
+              <img id="video-grid-btn" style="width: 35px; height: 35px; left: 1005px; top: 991px; position: absolute; z-index: 40; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_toggle_layout.png" alt="所有视频概览" title="所有视频概览" />
             </div>
           </div>
           
@@ -709,29 +735,29 @@
             <div id="modal-backdrop-blur" style="width: 1920px; height: 1080px; left: 0px; top: 0px; position: absolute; background: rgba(217, 217, 217, 0.25); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 9990;"></div>
             
             <!-- Left Page Image (width: 614.59px, height: 869px, left: 344.96px, top: 120px) - Sharp Edges & Heavy Drop Shadow -->
-            <img id="modal-page-left" class="book-page-sharp" style="width: 614.59px; height: 869px; left: 344.96px; top: 120px; position: absolute; object-fit: cover; z-index: 9995; background: #ffffff; cursor: pointer;" src="05_categories/visual/detail/smart_entry/page_01.webp" alt="Left Page"  loading="lazy" decoding="async" />
+            <img id="modal-page-left" class="book-page-sharp" style="width: 614.59px; height: 869px; left: 344.96px; top: 120px; position: absolute; object-fit: cover; z-index: 9995; background: #ffffff; cursor: pointer;" src="05_categories/visual/detail/smart_entry/page_01.webp" alt="Left Page" />
 
             <!-- Right Page Image (width: 614.59px, height: 869px, left: 960.45px, top: 120px) - Sharp Edges & Heavy Drop Shadow -->
-            <img id="modal-page-right" class="book-page-sharp" style="width: 614.59px; height: 869px; left: 960.45px; top: 120px; position: absolute; object-fit: cover; z-index: 9995; background: #ffffff; cursor: pointer;" src="05_categories/visual/detail/smart_entry/page_02.webp" alt="Right Page"  loading="lazy" decoding="async" />
+            <img id="modal-page-right" class="book-page-sharp" style="width: 614.59px; height: 869px; left: 960.45px; top: 120px; position: absolute; object-fit: cover; z-index: 9995; background: #ffffff; cursor: pointer;" src="05_categories/visual/detail/smart_entry/page_02.webp" alt="Right Page" />
 
             <!-- Previous Page Button (left: 910px, top: 1006px) -> ui/btn_left.png -->
-            <img id="modal-prev-btn" style="width: 35px; height: 35px; left: 910px; top: 1006px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_left.png" alt="上一页" title="上一页"  loading="lazy" decoding="async" />
+            <img id="modal-prev-btn" style="width: 35px; height: 35px; left: 910px; top: 1006px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_left.png" alt="上一页" title="上一页" />
 
             <!-- Next Page Button (left: 975px, top: 1006px) -> ui/btn_right.png -->
-            <img id="modal-next-btn" style="width: 35px; height: 35px; left: 975px; top: 1006px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_right.png" alt="下一页" title="下一页"  loading="lazy" decoding="async" />
+            <img id="modal-next-btn" style="width: 35px; height: 35px; left: 975px; top: 1006px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_right.png" alt="下一页" title="下一页" />
 
             <!-- Mode B: Web Design Long Scroll Container (width: 1230.08px, left: 345px, top: 120px, height: 869px) -->
             <div id="modal-web-container" class="no-scrollbar" style="width: 1230.08px; height: 869px; left: 345px; top: 120px; position: absolute; overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; z-index: 9995; display: none;">
               <!-- Long Scroll Web Content (1230.08px wide, dynamic height, centered) -->
-              <img id="modal-web-img" style="width: 1230.08px; height: auto; display: block; margin: 0 auto; user-select: none;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/visual/web/06_c6c.jpg" alt="Web Design Long Page"  loading="lazy" decoding="async" />
+              <img id="modal-web-img" style="width: 1230.08px; height: auto; display: block; margin: 0 auto; user-select: none;" src="05_categories/visual/web/06_c6c.jpg" alt="Web Design Long Page" />
             </div>
 
             <!-- Mode B: Up & Down Scroll Control Buttons -->
             <!-- Scroll Up Button (left: 1610px, top: 516px) -> ui/btn_up.png -->
-            <img id="modal-scroll-up-btn" style="width: 35px; height: 35px; left: 1610px; top: 516px; position: absolute; z-index: 9998; cursor: pointer; display: none; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_up.png" alt="向上滚动" title="向上滚动"  loading="lazy" decoding="async" />
+            <img id="modal-scroll-up-btn" style="width: 35px; height: 35px; left: 1610px; top: 516px; position: absolute; z-index: 9998; cursor: pointer; display: none; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_up.png" alt="向上滚动" title="向上滚动" />
 
             <!-- Scroll Down Button (left: 1610px, top: 581px) -> ui/btn_down.png -->
-            <img id="modal-scroll-down-btn" style="width: 35px; height: 35px; left: 1610px; top: 581px; position: absolute; z-index: 9998; cursor: pointer; display: none; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_down.png" alt="向下滚动" title="向下滚动"  loading="lazy" decoding="async" />
+            <img id="modal-scroll-down-btn" style="width: 35px; height: 35px; left: 1610px; top: 581px; position: absolute; z-index: 9998; cursor: pointer; display: none; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_down.png" alt="向下滚动" title="向下滚动" />
 
             <!-- Close Button (Top Right) -->
             <div id="modal-close-btn" style="position: absolute; top: 40px; right: 50px; width: 42px; height: 42px; border-radius: 50%; background: rgba(0, 0, 0, 0.35); color: white; display: flex; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; font-size: 20px; backdrop-filter: blur(8px); transition: background 0.2s ease, transform 0.2s ease;" title="关闭">✕</div>
@@ -750,7 +776,7 @@
 
             <!-- Core Video Screen Container (Landscape: 1080px x 608px @ 420px | Portrait: 342px x 608px @ 789px) -->
             <div id="video-screen-container" style="width: 1080px; height: 608px; left: 420px; top: 246px; position: absolute; background: black; border-radius: 20px; overflow: hidden; z-index: 9996; transition: width 0.3s ease, left 0.3s ease;">
-              <video id="active-video-element" style="width: 100%; height: 100%; object-fit: cover;" playsinline preload="none" poster="05_categories/video/cover/cover_full_01.png"></video>
+              <video id="active-video-element" style="width: 100%; height: 100%; object-fit: cover;" playsinline preload="metadata" src="05_categories/video/media/video_01.mp4" poster="05_categories/video/cover/cover_full_01.png"></video>
             </div>
 
             <!-- Video Progress Bar Background (width: 1080px, height: 8px, left: 420px, top: 885px) -->
@@ -768,7 +794,7 @@
             <!-- 3 Bottom Control Icon Buttons (Seek Backward, Play/Pause, Seek Forward) -->
             <!-- Icon 1: Seek Backward 5s (width: 72px, height: 42px, left: 816px, top: 928px) -->
             <div id="video-rewind-btn" style="width: 72px; height: 42px; left: 816px; top: 928px; position: absolute; z-index: 9997; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s ease, transform 0.2s ease;" title="后退 5 秒">
-              <img src="ui/btn_step_back.png" alt="Step back" style="width: 72px; height: 42px; object-fit: contain; pointer-events: none;"  loading="lazy" decoding="async" />
+              <img src="ui/btn_step_back.png" alt="Step back" style="width: 72px; height: 42px; object-fit: contain; pointer-events: none;" />
             </div>
 
             <!-- Icon 2: Play / Pause Button (width: 40px, height: 49px, left: 940px, top: 926px) -->
@@ -779,7 +805,7 @@
 
             <!-- Icon 3: Seek Forward 5s (width: 72px, height: 42px, left: 1032px, top: 928px) -->
             <div id="video-forward-btn" style="width: 72px; height: 42px; left: 1032px; top: 928px; position: absolute; z-index: 9997; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.2s ease, transform 0.2s ease;" title="快进 5 秒">
-              <img src="ui/btn_go_ahead.png" alt="go ahead" style="width: 72px; height: 42px; object-fit: contain; pointer-events: none;"  loading="lazy" decoding="async" />
+              <img src="ui/btn_go_ahead.png" alt="go ahead" style="width: 72px; height: 42px; object-fit: contain; pointer-events: none;" />
             </div>
 
             <!-- Close Button (Top Right) -->
@@ -793,15 +819,15 @@
 
             <!-- Core Long Detail Showcase Viewport (width: 1550px, height: 872px, left: 185px, top: 208px, seamless 100% full width) -->
             <div id="spatial-detail-scroll-container" class="no-scrollbar" style="width: 1550px; height: 872px; left: 185px; top: 208px; position: absolute; background: transparent; overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; z-index: 9995; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);">
-              <img id="spatial-detail-img" style="width: 100%; height: auto; display: block; user-select: none;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/spatial/detail/detail_01.jpg" alt="Spatial Project Detail"  loading="lazy" decoding="async" />
+              <img id="spatial-detail-img" style="width: 100%; height: auto; display: block; user-select: none;" src="05_categories/spatial/detail/detail_01.jpg" alt="Spatial Project Detail" />
             </div>
 
             <!-- Up & Down Scroll Control Buttons (35px x 35px at left: 1759px) -->
             <!-- Scroll Up Button (top: 613px) -> ui/btn_up.png -->
-            <img id="spatial-scroll-up-btn" style="width: 35px; height: 35px; left: 1759px; top: 613px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_up.png" alt="向上滚动" title="向上滚动"  loading="lazy" decoding="async" />
+            <img id="spatial-scroll-up-btn" style="width: 35px; height: 35px; left: 1759px; top: 613px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_up.png" alt="向上滚动" title="向上滚动" />
 
             <!-- Scroll Down Button (top: 678px) -> ui/btn_down.png -->
-            <img id="spatial-scroll-down-btn" style="width: 35px; height: 35px; left: 1759px; top: 678px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_down.png" alt="向下滚动" title="向下滚动"  loading="lazy" decoding="async" />
+            <img id="spatial-scroll-down-btn" style="width: 35px; height: 35px; left: 1759px; top: 678px; position: absolute; z-index: 9998; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease;" src="ui/btn_down.png" alt="向下滚动" title="向下滚动" />
 
             <!-- Close Button (Top Right) -->
             <div id="spatial-modal-close-btn" style="position: absolute; top: 40px; right: 50px; width: 42px; height: 42px; border-radius: 50%; background: rgba(0, 0, 0, 0.35); color: white; display: flex; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; font-size: 20px; backdrop-filter: blur(8px); transition: background 0.2s ease, transform 0.2s ease;" title="关闭">✕</div>
@@ -817,21 +843,21 @@
       </div>
       <div class="w-full flex flex-col space-y-8">
         <div class="relative rounded-xl overflow-hidden shadow-md">
-          <img src="05_categories/tab_visual_bg.png" alt="Visual Design" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="05_categories/tab_visual_bg.png" alt="Visual Design" class="w-full h-auto">
           <div class="absolute top-6 left-6 text-black">
             <h3 class="text-2xl font-black uppercase">视觉设计</h3>
             <p class="text-sm font-bold uppercase">Visual Design</p>
           </div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-md">
-          <img src="05_categories/tab_spatial_bg.png" alt="Spatial Design" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="05_categories/tab_spatial_bg.png" alt="Spatial Design" class="w-full h-auto">
           <div class="absolute top-6 left-6 text-white">
             <h3 class="text-2xl font-black uppercase">空间设计</h3>
             <p class="text-sm font-bold uppercase">Spatial Design</p>
           </div>
         </div>
         <div class="relative rounded-xl overflow-hidden shadow-md">
-          <img src="05_categories/tab_video_bg.png" alt="Dynamic Video" class="w-full h-auto" loading="lazy" decoding="async">
+          <img src="05_categories/tab_video_bg.png" alt="Dynamic Video" class="w-full h-auto">
           <div class="absolute top-6 left-6 text-white">
             <h3 class="text-2xl font-black uppercase">动态视频</h3>
             <p class="text-sm font-bold uppercase">Dynamic Video</p>
@@ -852,6 +878,7 @@
         <div style="width: 1920px; height: 1080px; position: relative; background: transparent; overflow: hidden">
           <!-- TextPressure stylesheet -->
           <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
             .text-pressure-flex {
               display: flex;
               justify-content: space-between;
@@ -885,8 +912,8 @@
           <div style="width: 282px; height: 40px; left: 40px; top: 812px; position: absolute"><span style="color: white; font-size: 15px; font-family: Archivo Black; font-weight: 400; text-transform: uppercase; line-height: 40px; word-wrap: break-word">EMAIL</span><span style="color: white; font-size: 15px; font-family: Inclusive Sans; font-weight: 400; text-transform: uppercase; line-height: 40px; word-wrap: break-word">：</span><span style="color: white; font-size: 15px; font-family: Inclusive Sans; font-weight: 500; text-transform: uppercase; line-height: 40px; word-wrap: break-word">1809580261@</span><span style="color: white; font-size: 15px; font-family: Inclusive Sans; font-weight: 500; text-transform: lowercase; line-height: 40px; word-wrap: break-word">QQ.COM</span></div>
           <div style="width: 417px; height: 40px; left: 40px; top: 861px; position: absolute"><span style="color: white; font-size: 15px; font-family: Archivo Black; font-weight: 400; text-transform: uppercase; line-height: 40px; word-wrap: break-word">ADDRESS</span><span style="color: white; font-size: 15px; font-family: Inclusive Sans; font-weight: 500; text-transform: uppercase; line-height: 40px; word-wrap: break-word">：浙江省杭州市拱墅区</span></div>
           <div style="width: 531px; height: 91px; left: 40px; top: 909px; position: absolute; text-align: justify; color: white; font-size: 15px; font-family: Inter; font-weight: 200; text-transform: uppercase; line-height: 16px; word-wrap: break-word">Sincere thanks to everyone for taking the time to look through my works. If you have any collaboration or consultation needs, you may reach out for my contact information. I look forward to communicating with you.</div>
-          <img style="width: 132px; height: 131px; left: 439px; top: 766px; position: absolute; object-fit: cover;" src="06_contact/contact_qr.png" alt="Contact QR"  loading="lazy" decoding="async" />
-          <img style="width: 1275px; height: 301px; left: 605px; top: 670px; position: absolute; object-fit: cover;" src="06_contact/contact_graphic.png" alt="Contact Graphic"  loading="lazy" decoding="async" />
+          <img style="width: 132px; height: 131px; left: 439px; top: 766px; position: absolute; object-fit: cover;" src="06_contact/contact_qr.png" alt="Contact QR" />
+          <img style="width: 1275px; height: 301px; left: 605px; top: 670px; position: absolute; object-fit: cover;" src="06_contact/contact_graphic.png" alt="Contact Graphic" />
 
           <div style="width: 1920px; height: 1px; left: 0px; top: 1009px; position: absolute; background: rgba(255, 255, 255, 0.60)"></div>
           <a href="#" class="cursor-pointer hover:text-white transition-colors" style="width: 57px; height: 40px; left: 40px; top: 1022px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 12px; font-family: Inclusive Sans; font-weight: 400; text-transform: uppercase; line-height: 40px; letter-spacing: 1.20px; word-wrap: break-word; text-decoration: none; display: block;">RESUME</a>
@@ -925,11 +952,10 @@
 
   </section>
 
-  <!-- Local Core Libraries (Zero External CDN Latency) -->
-  <script src="libs/three.min.js" defer></script>
-  <script src="libs/gsap.min.js" defer></script>
-  <script src="libs/ScrollTrigger.min.js" defer></script>
+  <!-- GSAP Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <!-- Main Script -->
-  <script src="main.js" defer></script>
+  <script src="main.js"></script>
 </body>
 </html>

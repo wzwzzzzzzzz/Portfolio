@@ -1,22 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>吴曌 | Visual · AI · Spatial · Brand Designer Portfolio</title>
   <meta name="description" content="吴曌的个人设计作品集。致力于视觉设计、AI智能设计、品牌视觉设计与多媒体空间设计的无界融合。探索未来数字与实体的交互艺术。">
-  <!-- High-Priority Preload for First Screen Hero Image -->
-  <link rel="preload" as="image" href="01_hero/cover_title.png" fetchpriority="high">
-
-  <!-- Precompiled Static Tailwind CSS (Zero Runtime Overhead, Zero External CDN Latency) -->
-  <link rel="stylesheet" href="tailwind.min.css">
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Fonts with font-display: swap (combined to prevent chained waterfall) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.font.im">
   <link rel="preconnect" href="https://fonts.gstatic.font.im" crossorigin>
-  <link href="https://fonts.font.im/css2?family=Archivo+Black&family=Inclusive+Sans:ital,wght@0,300..400;1,300..400&family=JetBrains+Mono:wght@300;400;500&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.font.im/css2?family=Archivo+Black&family=Inclusive+Sans:ital,wght@0,300..400;1,300..400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS v3 Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#050505',
+              card: '#0a0a0c',
+              cardInner: '#111115',
+              accent: '#00f0ff', // 极光冰蓝
+              accentDim: 'rgba(0, 240, 255, 0.12)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              textMuted: '#8f90a6',
+              textLight: '#f4f4f7',
+            }
+          },
+          fontFamily: {
+            sans: ['"Inclusive Sans"', '"Alibaba PuHuiTi"', '"AlibabaPuHuiTi"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            archivo: ['"Archivo Black"', 'sans-serif'],
+            inclusive: ['"Inclusive Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Three.js Library for WebGL Silk Shader -->
   
 </head>
 <body class="bg-cyber-bg text-cyber-textLight font-sans overflow-x-hidden selection:bg-cyber-accent selection:text-black">
@@ -201,7 +225,7 @@
           
           <!-- Fullscreen Background GIF (1920x1080, no borders, positioned strictly below text, top: 280px) -->
           <div class="absolute w-[1920px] h-[1080px] left-0 top-[280px] overflow-hidden">
-            <video data-src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
+            <video src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
           </div>
 
           <!-- Row 1: WORK. (Initial position top: 13px) -->
@@ -236,7 +260,7 @@
       </div>
       <!-- Mobile GIF Showcase -->
       <div class="w-full mt-10 rounded-2xl overflow-hidden border border-white/10 bg-black/40 aspect-video">
-        <video data-src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
+        <video src="03_work/work_marquee_bg.mp4" loop muted playsinline preload="none" class="lazy-video w-full h-full object-cover"></video>
       </div>
     </div>
     
@@ -657,20 +681,20 @@
               <!-- 12-Card Grid Layout Overview Mode B (Toggled via 田字格图标 - Pure Posters without White Border) -->
               <div id="video-grid-container" style="position: absolute; inset: 0; display: none; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; z-index: 25;">
                 <!-- Row 1 (top: 290px) -->
-                <img class="grid-video-card" data-index="0" style="width: 300px; height: 300px; left: 30px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_01.png" alt="Video 1"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="1" style="width: 300px; height: 300px; left: 342px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_02.png" alt="Video 2"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="2" style="width: 300px; height: 300px; left: 654px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_03.png" alt="Video 3"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="3" style="width: 300px; height: 300px; left: 966px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_04.png" alt="Video 4"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="4" style="width: 300px; height: 300px; left: 1278px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_05.png" alt="Video 5"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="5" style="width: 300px; height: 300px; left: 1590px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_06.png" alt="Video 6"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="0" style="width: 300px; height: 300px; left: 30px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_01.png" alt="Video 1"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="1" style="width: 300px; height: 300px; left: 342px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_02.png" alt="Video 2"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="2" style="width: 300px; height: 300px; left: 654px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_03.png" alt="Video 3"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="3" style="width: 300px; height: 300px; left: 966px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_04.png" alt="Video 4"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="4" style="width: 300px; height: 300px; left: 1278px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_05.png" alt="Video 5"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="5" style="width: 300px; height: 300px; left: 1590px; top: 290px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_06.png" alt="Video 6"  loading="lazy" decoding="async" />
 
                 <!-- Row 2 (top: 606px) -->
-                <img class="grid-video-card" data-index="6" style="width: 300px; height: 300px; left: 31px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_07.png" alt="Video 7"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="7" style="width: 300px; height: 300px; left: 343px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_08.png" alt="Video 8"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="8" style="width: 300px; height: 300px; left: 655px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_09.png" alt="Video 9"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="9" style="width: 300px; height: 300px; left: 967px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_10.png" alt="Video 10"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="10" style="width: 300px; height: 300px; left: 1279px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_11.png" alt="Video 11"  loading="lazy" decoding="async" />
-                <img class="grid-video-card" data-index="11" style="width: 300px; height: 300px; left: 1591px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/video/thumb/thumb_grid_12.png" alt="Video 12"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="6" style="width: 300px; height: 300px; left: 31px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_07.png" alt="Video 7"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="7" style="width: 300px; height: 300px; left: 343px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_08.png" alt="Video 8"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="8" style="width: 300px; height: 300px; left: 655px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_09.png" alt="Video 9"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="9" style="width: 300px; height: 300px; left: 967px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_10.png" alt="Video 10"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="10" style="width: 300px; height: 300px; left: 1279px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_11.png" alt="Video 11"  loading="lazy" decoding="async" />
+                <img class="grid-video-card" data-index="11" style="width: 300px; height: 300px; left: 1591px; top: 606px; position: absolute; cursor: pointer; object-fit: cover;" src="05_categories/video/thumb/thumb_grid_12.png" alt="Video 12"  loading="lazy" decoding="async" />
               </div>
 
               <!-- Controls (3 Round Buttons strictly using Button folder PNG assets and exact coordinates) -->
@@ -723,7 +747,7 @@
             <!-- Mode B: Web Design Long Scroll Container (width: 1230.08px, left: 345px, top: 120px, height: 869px) -->
             <div id="modal-web-container" class="no-scrollbar" style="width: 1230.08px; height: 869px; left: 345px; top: 120px; position: absolute; overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; z-index: 9995; display: none;">
               <!-- Long Scroll Web Content (1230.08px wide, dynamic height, centered) -->
-              <img id="modal-web-img" style="width: 1230.08px; height: auto; display: block; margin: 0 auto; user-select: none;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/visual/web/06_c6c.jpg" alt="Web Design Long Page"  loading="lazy" decoding="async" />
+              <img id="modal-web-img" style="width: 1230.08px; height: auto; display: block; margin: 0 auto; user-select: none;" src="05_categories/visual/web/06_c6c.jpg" alt="Web Design Long Page"  loading="lazy" decoding="async" />
             </div>
 
             <!-- Mode B: Up & Down Scroll Control Buttons -->
@@ -793,7 +817,7 @@
 
             <!-- Core Long Detail Showcase Viewport (width: 1550px, height: 872px, left: 185px, top: 208px, seamless 100% full width) -->
             <div id="spatial-detail-scroll-container" class="no-scrollbar" style="width: 1550px; height: 872px; left: 185px; top: 208px; position: absolute; background: transparent; overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; z-index: 9995; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);">
-              <img id="spatial-detail-img" style="width: 100%; height: auto; display: block; user-select: none;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" data-src="05_categories/spatial/detail/detail_01.jpg" alt="Spatial Project Detail"  loading="lazy" decoding="async" />
+              <img id="spatial-detail-img" style="width: 100%; height: auto; display: block; user-select: none;" src="05_categories/spatial/detail/detail_01.jpg" alt="Spatial Project Detail"  loading="lazy" decoding="async" />
             </div>
 
             <!-- Up & Down Scroll Control Buttons (35px x 35px at left: 1759px) -->
@@ -852,6 +876,7 @@
         <div style="width: 1920px; height: 1080px; position: relative; background: transparent; overflow: hidden">
           <!-- TextPressure stylesheet -->
           <style>
+            @import url('https://fonts.font.im/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
             .text-pressure-flex {
               display: flex;
               justify-content: space-between;
@@ -925,10 +950,10 @@
 
   </section>
 
-  <!-- Local Core Libraries (Zero External CDN Latency) -->
-  <script src="libs/three.min.js" defer></script>
-  <script src="libs/gsap.min.js" defer></script>
-  <script src="libs/ScrollTrigger.min.js" defer></script>
+  <!-- GSAP Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <!-- Main Script -->
   <script src="main.js" defer></script>
 </body>
